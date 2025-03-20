@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<style xmlns="http://purl.org/net/xbiblio/csl" class="in-text" version="1.0" 
+       demote-non-dropping-particle="never" page-range-format="expanded">
+  <info>
+    <title>American Psychological Association 7th edition - maha sabry</title>
+    <title-short>APA</title-short>
+    <id>http://csl.mendeley.com/styles/796243891/apa</id>
+    <link href="http://www.zotero.org/styles/apa" rel="self"/>
+    <link href="http://www.zotero.org/styles/apa-6th-edition" rel="template"/>
+    <link href="https://apastyle.apa.org/style-grammar-guidelines/references/examples" 
+          rel="documentation"/>
+    <author>
+      <name>Brenton M. Wiernik</name>
+      <email>zotero@wiernik.org</email>
+    </author>
+    <contributor>
+      <name>maha sabry</name>
+      <uri/>
+    </contributor>
+    <category citation-format="author-date"/>
+    <category field="psychology"/>
+    <category field="generic-base"/>
+    <updated>2025-03-20T16:07:46+00:00</updated>
+    <rights license="http://creativecommons.org/licenses/by-sa/3.0/">
+      This work is licensed under a Creative Commons Attribution-ShareAlike 3.0 License
+    </rights>
+  </info>
+
+  <locale xml:lang="en">
+    <terms>
+      <term name="et-al">et al.</term>
+    </terms>
+  </locale>
+
+  <macro name="author-bib">
+    <group delimiter=" ">
+      <names variable="composer" delimiter=", &amp; ">
+        <name name-as-sort-order="all" and="symbol" sort-separator=", "
+              initialize-with=". " delimiter=", " delimiter-precedes-last="always"
+              et-al-min="4" et-al-use-first="3"/>
+        <substitute>
+          <names variable="author"/>
+          <names variable="illustrator"/>
+        </substitute>
+      </names>
+    </group>
+  </macro>
+
+  <bibliography hanging-indent="true" et-al-min="4" et-al-use-first="3"
+                et-al-use-last="false" entry-spacing="0" line-spacing="2">
+    <sort>
+      <key macro="author-sort"/>
+      <key macro="date-sort-group" sort="ascending"/>
+      <key macro="date-sort" sort="ascending"/>
+      <key variable="status"/>
+      <key macro="title"/>
+    </sort>
+    <layout>
+      <choose>
+        <if type="bill hearing legal_case legislation regulation treaty" match="any">
+          <text macro="legal-cites"/>
+        </if>
+        <else>
+          <group delimiter=" ">
+            <group delimiter=". " suffix=".">
+              <text macro="author-bib"/>
+              <text macro="date-bib"/>
+              <text macro="title-and-descriptions"/>
+              <text macro="container"/>
+              <text macro="event"/>
+              <text macro="publisher"/>
+            </group>
+            <text macro="access"/>
+            <text macro="publication-history"/>
+          </group>
+        </else>
+      </choose>
+    </layout>
+  </bibliography>
+
+  <citation et-al-min="3" et-al-use-first="1" disambiguate-add-year-suffix="true"
+            disambiguate-add-names="true" disambiguate-add-givenname="true"
+            collapse="year" givenname-disambiguation-rule="primary-name-with-initials">
+    <sort>
+      <key macro="author-sort" names-min="3" names-use-first="1"/>
+      <key macro="date-sort-group" sort="ascending"/>
+      <key macro="date-sort" sort="ascending"/>
+      <key variable="status"/>
+    </sort>
+    <layout prefix="(" suffix=")" delimiter="; ">
+      <group delimiter=", ">
+        <text macro="author-intext"/>
+        <text macro="date-intext"/>
+        <text macro="citation-locator"/>
+      </group>
+    </layout>
+  </citation>
+</style>
